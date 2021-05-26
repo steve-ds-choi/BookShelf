@@ -1,6 +1,4 @@
 
-README
-
 1. 타사의 라이브러리를 사용하지 않는가? - Okay
 2. 최소 배포 대상은 iOS9 인가? - Okay
 3. UINavigationController 기반으로 구동되는가? - Okay
