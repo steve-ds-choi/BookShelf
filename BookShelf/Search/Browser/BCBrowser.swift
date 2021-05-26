@@ -116,10 +116,12 @@ extension BCBrowser: UITextFieldDelegate
     @objc
     func search()
     {
-        pvSerach.progress = 0
-        _shelf.rqList(text: tfSearch.text!)
+        let text = tfSearch.text!
 
-        showLoading(true)
+        pvSerach.progress = 0
+        _shelf.rqList(text: text)
+
+        if text.count > 0 { showLoading(true) }
     }
 
     @IBAction
