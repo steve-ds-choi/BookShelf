@@ -17,8 +17,9 @@ protocol IBShelfList
 
 class BShelf: NSObject
 {
-    var list = [BItem]()
     var delegate: IBShelfList!
+
+    var list  = [BItem]()
     var total = 0
 
     var cache: BCache!

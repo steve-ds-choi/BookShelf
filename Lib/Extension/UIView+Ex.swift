@@ -23,7 +23,7 @@ extension UIView.AutoresizingMask {
     static let MB = _MASK(0x0a)
     static let MM = _MASK(0x2a) // MH
 
-    static let MLT = _MASK(0x24) // full
+    static let MLT = _MASK(0x24) // left top flexible
 }
 
 extension UIView {

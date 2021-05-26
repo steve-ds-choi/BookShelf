@@ -10,8 +10,8 @@ import UIKit
 public
 class MVFold: UIScrollView {
 
-    var nofit  = false
-    var vgap   = CGFloat(0)
+    var nofit = false
+    var vgap  = CGFloat(0)
 
     func initialize()
     {

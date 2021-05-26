@@ -16,10 +16,11 @@ case Link
 
 class BCInformation: BViewController {
 
-    private var _details = [String:BCICell]()
     private var _item: BItem!
-    private var _edit = BCIEdit()
-    private var _thumbH = CGFloat(0)
+
+    private var _details = [String:BCICell]()
+    private var _edit    = BCIEdit()
+    private var _thumbH  = CGFloat(0)
 
     @IBOutlet weak var vwTitle:  UIView!
     @IBOutlet weak var lbTitle:  UILabel!
