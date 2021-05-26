@@ -101,8 +101,9 @@ class BLink: NSObject {
 
             if err != nil
             {
-                if self._lsTask == nil { return } // cancel - not error
-
+                let err = err as NSError?
+                if err?.code == -999 { return } // cancel
+                
                 _ASYNC { self.onListError() }
 
                 return
