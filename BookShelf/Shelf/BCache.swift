@@ -62,10 +62,13 @@ class BCache: NSObject {
     }
 
     private
-    func _commit()
+    func _commit(_ now: Bool = false)
     {
-        _req -= 1
-        if _req > 0 { return }
+        if now == false
+        {
+            _req -= 1
+            if _req > 0 { return }
+        }
 
         _TSAFE(self)
         {
@@ -161,7 +164,7 @@ class BCache: NSObject {
                 image = UIImage(data:data)
                 if image == nil { return nil }
 
-                _images[uid] = UIImage(data:data)
+                _images[uid] = image
                 fwrite(uid, data)
             }
 
@@ -198,4 +201,28 @@ class BCache: NSObject {
             return image
         }
     }
+    
+    func commitAll()
+    {
+        path.fcreate(2)
+
+        if save == false { return }
+
+        defer {
+            _commit(true)
+        }
+
+        var i = 0
+        for (k, v) in _images
+        {
+            if i >= max { return }
+            let data = v.pngData()
+            
+            if data == nil { continue }
+            fwrite(k, data!)
+            
+            i += 1
+        }
+    }
+    
 }

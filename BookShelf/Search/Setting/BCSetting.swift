@@ -48,7 +48,10 @@ class BCSetting: BViewController {
         _config.cacheWrite = on
 
         _cache.save = on
+        _cache.commitAll()
+        
         enableFiles(on)
+    
         setFiles()
     }
     

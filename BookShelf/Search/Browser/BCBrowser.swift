@@ -181,7 +181,7 @@ extension BCBrowser: UITableViewDelegate, UITableViewDataSource, IBShelfList
     {
         let count = _list.count
         tv.isHidden = count == 0
-
+ 
         return count
     }
     
